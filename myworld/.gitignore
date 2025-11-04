@@ -1,0 +1,36 @@
+# Created by venv; see https://docs.python.org/3/library/venv.html
+
+# Bytecode cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# SQLite database
+db.sqlite3
+
+# Environment files and sensitive information
+*.env
+.env.*
+
+# Django-related files
+/staticfiles/
+media/
+*.log
+
+# VS Code and IDE settings
+.vscode/
+.idea/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Test results and coverage reports
+.coverage
+htmlcov/
+.pytest_cache/
