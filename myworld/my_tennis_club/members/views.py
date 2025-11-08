@@ -28,3 +28,7 @@ def testing(request):
     'fruits': ['Apple', 'Banana', 'Cherry'],   
   }
   return HttpResponse(template.render(context, request))
+
+def show_base(request):
+  template  = loader.get_template('base.html')
+  return HttpResponse(template.render())
