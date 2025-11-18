@@ -1,0 +1,40 @@
+{# templates/timeline.html #}
+{% extends "base.html" %}
+
+{% block title %}Timeline - Simple Blog{% endblock %}
+
+{% block header %}Timeline{% endblock %}
+
+{% block content %}
+  <form method="post">
+    {% csrf_token %}
+    <p>
+      <label for="title">Title:</label><br>
+      <input type="text" id="title" name="title">
+    </p>
+
+    <p>
+      <label for="body">Content:</label><br>
+      <textarea id="body" name="body" rows="10" cols="50"></textarea>
+    </p>
+
+    <button type="submit">Post</button>
+  </form>
+
+  <hr>
+
+  <h2>Posts</h2>
+
+  {% for post in posts %}
+    <article>
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.body|linebreaksbr }}</p>
+      <small>
+        Posted on: {{ post.created_at|date:"Y/m/d H:i" }}
+      </small>
+    </article>
+    <hr>
+  {% empty %}
+    <p>No posts yet.</p>
+  {% endfor %}
+{% endblock %}
