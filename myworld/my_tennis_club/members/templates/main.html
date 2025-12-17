@@ -1,13 +1,251 @@
 {% extends "master.html" %}
 
-{% block title %}Home - My Portfolio{% endblock %}
+{% block title %}Hatsune Kinoshita - Portfolio{% endblock %}
 
 {% block content %}
-  <h1>Welcome to My Portfolio</h1>
-  <p>Hi,I am Hatsune</p>
-  <p>This is my assignment of IT112 Fall of North Seattle College</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    /* Styling for the portfolio layout */
+    .hero-section {
+      text-align: center;
+      padding: 60px 20px;
+      background-color: #f8f9fa;
+      margin-bottom: 40px;
+    }
+    .hero-section h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    .hero-section .subtitle {
+      font-size: 1.5em;
+      color: #666;
+      margin-bottom: 20px;
+    }
+    .contact-info a {
+      margin: 0 10px;
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    
+    .section-container {
+      max-width: 900px;
+      margin: 0 auto 50px auto;
+      padding: 0 20px;
+    }
+    .section-title {
+      border-bottom: 2px solid #eee;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      font-size: 2em;
+      color: #2c3e50;
+    }
 
-  <h1>Info</h1>
+    /* Experience & Education Timeline Style */
+    .timeline-item {
+      margin-bottom: 25px;
+    }
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+    .timeline-header h3 {
+      margin: 0;
+      font-size: 1.4em;
+    }
+    .timeline-header .date {
+      color: #777;
+      font-style: italic;
+    }
+    .timeline-subheader {
+      color: #555;
+      font-weight: bold;
+      margin-bottom: 10px;
+      display: block;
+    }
+    
+    /* Skills Grid */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .skill-category {
+      flex: 1;
+      min-width: 250px;
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .project-card {
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 8px;
+      transition: transform 0.2s;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
 
+  <div class="hero-section">
+    <h1>Hatsune Kinoshita</h1>
+    <div class="subtitle">Software Engineer</div>
+    <p>Based in Seattle, WA</p>
+    <div class="contact-info">
+      <a href="mailto:hatsune.kinoshita@seattlecolleges.edu">Email</a>
+      <a href="https://github.com/codebykitsune" target="_blank">GitHub</a>
+      <a href="https://x.gd/vf40q" target="_blank">LinkedIn</a>
+    </div>
+  </div>
 
+  <div class="section-container" id="education">
+    <h2 class="section-title">Education</h2>
+    
+    <div class="timeline-item">
+      <div class="timeline-header">
+        <h3>Seattle Central College</h3>
+        <span class="date">Apr 2025 - Dec 2025</span>
+      </div>
+      <span class="timeline-subheader">IP Short-Term Certificate of Computer and Information Science</span>
+      <p>GPA: 4.0</p>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-header">
+        <h3>Sophia University</h3>
+        <span class="date">Apr 2022 - Mar 2028</span>
+      </div>
+      <span class="timeline-subheader">Bachelor of Arts in Foreign Studies</span>
+    </div>
+  </div>
+
+  <div class="section-container" id="skills">
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h3>Languages & Frameworks</h3>
+        <ul>
+          <li><strong>Frontend:</strong> JavaScript, TypeScript, React, HTML, CSS, Swift</li>
+          <li><strong>Backend:</strong> Go, Python, Java, Node.js</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>Tools & Databases</h3>
+        <ul>
+          <li><strong>Infrastructure:</strong> Docker, Firebase</li>
+          <li><strong>Database:</strong> MySQL</li>
+          <li><strong>Others:</strong> Git/GitHub, RESTful API Design</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-container" id="experience">
+    <h2 class="section-title">Work Experience</h2>
+
+    <div class="timeline-item">
+      <div class="timeline-header">
+        <h3>CyberAgent Inc.</h3>
+        <span class="date">Feb 2025 - Mar 2025</span>
+      </div>
+      <span class="timeline-subheader">Go Developer Intern | Tokyo, Japan</span>
+      <ul>
+        <li>Collaborated with a team of 3 engineers to design and implement a RESTful API using Go.</li>
+        <li>Gained practical experience in backend development and API design in a collaborative environment.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-header">
+        <h3>MICIN Inc.</h3>
+        <span class="date">Aug 2024 - Mar 2025</span>
+      </div>
+      <span class="timeline-subheader">Front-end Engineer Intern | Tokyo, Japan</span>
+      <ul>
+        <li>Spearheaded the refactoring of 10+ key components within a prescription app from Ruby on Rails to React.</li>
+        <li>Improved component reusability and maintainability.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-header">
+        <h3>NPO Waffle</h3>
+        <span class="date">Jul 2023 - Feb 2025</span>
+      </div>
+      <span class="timeline-subheader">STEM Mentor for Minority Youth | Tokyo, Japan</span>
+      <ul>
+        <li>Empowered over 50 female and non-binary students to build web/mobile apps using HTML, CSS, and JS.</li>
+        <li>Achieved 97% positive feedback from participants.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section-container" id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects-grid">
+      
+      <div class="project-card">
+        <h3>Recipe Sharing App (Open Hack U 2025)</h3>
+        <p><strong>Tech:</strong> Swift, Firebase, iOS</p>
+        <p>Developed an iOS application solving recipe discovery issues for university students. Targeted 90%+ of Japanese university students with iPhones.</p>
+      </div>
+
+      <div class="project-card">
+        <h3>Quiz Generator (Geek Camp Hackathon)</h3>
+        <p><strong>Tech:</strong> React UI, Firebase, ChatGPT API</p>
+        <p>Created a web app enabling ChatGPT to process university lectures and generate quizzes. Earned Honorable Mention Award (Top 20%).</p>
+      </div>
+
+      <div class="project-card">
+        <h3>Dots to Code</h3>
+        <p><strong>Tech:</strong> React, Responsive UI/UX</p>
+        <p>Innovated an interactive web survey platform focusing on responsive design. Achieved Finalist selection (Top 5% among 200+ participants).</p>
+      </div>
+
+      <div class="project-card">
+        <h3>My Portfolio & Blog</h3>
+        <p><strong>Tech:</strong> Django, Python, SQLite</p>
+        <p>A personal portfolio site featuring a dynamic blog system and member management functionality.</p>
+        <a href="{% url 'blog' %}" style="display:inline-block; margin-top:10px; text-decoration:none; color:#007bff;">Visit Blog &rarr;</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-container" id="volunteer">
+    <h2 class="section-title">Volunteer & Community</h2>
+    <ul>
+      <li><strong>CS in English (Aug 2025):</strong> Taught vibe-coding using Gemini for 5 students.</li>
+      <li><strong>Japan Seattle AI Innovation Meetup (Sep 2025):</strong> Facilitated event reception and venue setup.</li>
+      <li><strong>Japan Fair (Apr 2025):</strong> Transcribed names of 60+ visitors into Japanese calligraphy.</li>
+    </ul>
+  </div>
+
+  <footer style="background-color: #2c3e50; color: #ecf0f1; padding: 1rem; margin-top: 60px;">
+    
+    <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #34495e; font-size: 0.85em; color: #95a5a6;">
+      &copy; 2025 Hatsune Kinoshita. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
 {% endblock %}
